@@ -1,0 +1,18 @@
+ul {
+    list-style-type: none;
+    margin: 0  auto 10px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center ;
+    width: 75%;
+    font-weight: 500;
+    background-color: white;
+
+  }
+  .ms-auto{
+      margin-left: auto;
+  }
+  ul li{
+      margin: 0 10px;
+      
+  }

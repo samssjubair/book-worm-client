@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
 
@@ -12,17 +12,20 @@ const Home = () => {
         })
     },[])
     return (
-        <Grid
-            container
-            direction="row"
-            justify="center"
-            alignItems="center"
-            >
-            
-            {
-                products.map(pd=> <ProductCard product={pd}></ProductCard> )
-            }
-        </Grid>
+        <Box width="75%" style={{margin: '50px auto'}}>
+            <Grid
+                alignItems="center"
+                spacing="3"
+                container
+                direction="row"
+                justify="center"
+                alignItems="center"
+                >
+                {
+                    products.map(pd=> <ProductCard product={pd}></ProductCard> )
+                }
+            </Grid>
+        </Box>
     );
 };
 

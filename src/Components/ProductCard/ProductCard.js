@@ -8,20 +8,27 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Grid } from '@material-ui/core';
+import { useHistory } from 'react-router';
 const useStyles = makeStyles({
     root: {
-      maxWidth: 345,
+      width: 300
     },
     media: {
-      height: 140,
-      width: 140
+      height: 200,
+      width: 140,
+      margin: 'auto'
     },
   });
 const ProductCard = (props) => {
+    const history=useHistory();
     const classes = useStyles();
-    const {productName,price,writer,image}= props.product;
+    const {_id,productName,price,writer,image}= props.product;
+    const handleBuyNow=(id)=>{
+        
+        history.push(`/checkout/${id}`);
+    }
     return (
-        <Grid container item md={4} xs={12}>
+        <Grid  container item md={4} xs={12}>
             <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
@@ -29,21 +36,27 @@ const ProductCard = (props) => {
                 image={image}
                 />
                 <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                    {productName}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <h2 style={{height: '50px',textAlign: 'center'}}>
+                {productName}
+                </h2>
+                    
+                
+                <Typography  variant="body2" color="textSecondary" component="p">
                     {writer}
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="h2">
-                    {price}
-                </Typography>
+                <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                    <h2>
+                       ${price}
+                    </h2>
+                    <Button onClick={()=>handleBuyNow(_id)} style={{height: '40px'}} variant="contained" color="primary">
+                        Buy Now
+                    </Button>
+                </div>
+                
                 </CardContent>
             </CardActionArea>
             
-            <Button variant="contained" color="primary">
-                Buy Now
-            </Button>
+            
 
             </Card>
         </Grid>

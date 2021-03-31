@@ -1,6 +1,6 @@
 # Book Worm
 
-Online book selling E-commerce site
+Online book selling E-commerce website
 
 ## Language
 
