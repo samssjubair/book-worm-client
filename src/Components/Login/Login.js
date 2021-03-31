@@ -157,7 +157,7 @@ const Login = () => {
                 <Button
                         type="submit"
                         variant="contained"
-                        color="secondary">
+                        color="primary">
                         {
                             newUser? 'Create your account' : 'Login'
                         }

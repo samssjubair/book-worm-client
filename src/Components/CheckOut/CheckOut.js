@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import React, { useContext, useEffect, useState } from 'react';
+import { Redirect, useHistory, useParams } from 'react-router';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -9,6 +9,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Button, TableFooter } from '@material-ui/core';
+import { UserContext } from '../../App';
 
 const useStyles = makeStyles({
   table: {
@@ -23,6 +24,8 @@ function createData(description, quantity, price) {
 
 const CheckOut = () => {
     const {id}=useParams();
+    const history= useHistory();
+    const [loggedInUser,setLoggedInUser]=useContext(UserContext);
     const classes = useStyles();
     const [product,setProduct]= useState({});
     useEffect(()=>{
@@ -35,7 +38,21 @@ const CheckOut = () => {
       ];
 
       const handleCheckOut=()=>{
-          console.log("HEYYY");
+          const {email,displayName}= loggedInUser;
+          const {productName,writer,price}=product;
+          const orderInfo={email,displayName,productName,writer,price,orderDate: new Date()};
+          fetch('http://localhost:5000/placeOrder',{
+              method: 'POST',
+              headers: {"Content-type": 'application/json'},
+              body: JSON.stringify(orderInfo)
+          })
+          .then(res=>res.json())
+          .then(data=> {
+              if(data){
+                  alert("Order placed successfully.");
+                  history.push('/');
+              }
+          } )
       }
     
     

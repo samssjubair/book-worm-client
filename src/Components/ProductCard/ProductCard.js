@@ -16,7 +16,8 @@ const useStyles = makeStyles({
     media: {
       height: 200,
       width: 140,
-      margin: 'auto'
+      margin: 'auto',
+      marginTop: 10
     },
   });
 const ProductCard = (props) => {
@@ -29,7 +30,7 @@ const ProductCard = (props) => {
     }
     return (
         <Grid  container item md={4} xs={12}>
-            <Card className={classes.root}>
+            <Card style={{boxShadow: '5px 5px 20px grey'}} className={classes.root}>
             <CardActionArea>
                 <CardMedia
                 className={classes.media}
