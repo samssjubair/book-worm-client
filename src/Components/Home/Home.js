@@ -1,7 +1,7 @@
-import { Box, Grid } from '@material-ui/core';
+import { Box, CircularProgress, Grid } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
-
+import './Home.css'
 const Home = () => {
     const [products,setProducts]= useState([]);
     useEffect(()=>{
@@ -21,6 +21,16 @@ const Home = () => {
                 justify="center"
                 alignItems="center"
                 >
+                {
+                    products.length==0 && 
+                    <div class="loading">
+                        <div class="loader">
+                            <CircularProgress  />
+                            
+                        </div>
+                        
+                    </div>
+                }
                 {
                     products.map(pd=> <ProductCard product={pd}></ProductCard> )
                 }
