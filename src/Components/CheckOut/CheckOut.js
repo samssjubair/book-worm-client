@@ -29,7 +29,7 @@ const CheckOut = () => {
     const classes = useStyles();
     const [product,setProduct]= useState({});
     useEffect(()=>{
-        fetch('http://localhost:5000/product/'+id)
+        fetch('https://afternoon-tor-79198.herokuapp.com/product/'+id)
         .then(res=>res.json())
         .then(data=>setProduct(data))
     },[])
@@ -41,7 +41,7 @@ const CheckOut = () => {
           const {email,displayName}= loggedInUser;
           const {productName,writer,price}=product;
           const orderInfo={email,displayName,productName,writer,price,orderDate: new Date()};
-          fetch('http://localhost:5000/placeOrder',{
+          fetch('https://afternoon-tor-79198.herokuapp.com/placeOrder',{
               method: 'POST',
               headers: {"Content-type": 'application/json'},
               body: JSON.stringify(orderInfo)

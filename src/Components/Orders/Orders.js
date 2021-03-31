@@ -21,7 +21,7 @@ const Orders = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/allOrders?email=${loggedInUser.email}`)
+    fetch(`https://afternoon-tor-79198.herokuapp.com/allOrders?email=${loggedInUser.email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);

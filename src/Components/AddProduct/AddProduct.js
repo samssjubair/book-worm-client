@@ -27,7 +27,7 @@ const AddProduct = () => {
             price: data.price,
             image: imageURL
         }
-        fetch('http://localhost:5000/addProduct',{
+        fetch('https://afternoon-tor-79198.herokuapp.com/addProduct',{
             method: 'POST',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify(productData)

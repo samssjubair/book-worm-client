@@ -15,4 +15,8 @@ This is a fullstack project built on MongoDB, Node, ReactJS and Express. Materia
 This website can help you to buy your desire book easily in a very handy way. Authentication is easy. Admin can add , modify and delete book whenever necessary.
 
 ## Live site link 
+https://book-worm-fddd7.web.app/
+
+## Back end
+https://afternoon-tor-79198.herokuapp.com/
 
