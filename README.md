@@ -8,7 +8,7 @@ Javascript, node
 
 ## Project Description
 
-This is a fullstack project built on MongoDB, Node, ReactJS and Express. Material UI is also used for UI design, and Firebase has been used for authentication and hosting. Backend is deployed in heroku and database in MongoDB atlas. React hook form is also used for validation
+This is a fullstack project built using MongoDB, Node, ReactJS and Express. Material UI is also used for UI design, and Firebase has been used for authentication and hosting. Backend is deployed in heroku and database in MongoDB atlas. React hook form is also used for validation
 
 ## Website Description
 
