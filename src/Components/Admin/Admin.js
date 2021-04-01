@@ -71,7 +71,7 @@ const Admin = () => {
             <Switch>
             <Route exact path="/admin/">
                 <Container>
-                <Typography variant="h3" gutterBottom>
+                <Typography style={{marginTop: '20px',textAlign: 'center'}} variant="h3" gutterBottom>
                     Manage Books
                 </Typography>
                 <ManageProducts/>
@@ -81,7 +81,7 @@ const Admin = () => {
             </Route>
             <Route exact path="/admin/addProduct">
                 <Container>
-                <Typography variant="h3" gutterBottom>
+                <Typography  style={{marginTop: '20px',textAlign: 'center'}} variant="h3" gutterBottom>
                     Add Product
                 </Typography>
                 <AddProduct></AddProduct>
@@ -89,7 +89,7 @@ const Admin = () => {
             </Route>
             <Route exact path="/admin/editProduct">
                 <Container>
-                <Typography variant="h3" gutterBottom>
+                <Typography  style={{marginTop: '20px',textAlign: 'center'}} variant="h3" gutterBottom>
                     Edit Book
                 </Typography>
                 <Typography variant="body1" gutterBottom>
