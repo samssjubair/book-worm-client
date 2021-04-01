@@ -28,10 +28,10 @@ const Orders = () => {
   return (
     <div style={{width: '75%',margin: 'auto'}}>
       <p>
-        Welcome {loggedInUser.displayName}! <br />
+        Welcome {loggedInUser.displayName}!, You've ordered {orders.length} books so far <br />
 
       </p>
-      <h2>Your previous order:</h2>
+      <h2>Your previous orders:</h2>
       <TableContainer style={{boxShadow: '5px 5px 20px lightgray'}} component={Paper}>
         <Table aria-label="simple table">
           <TableHead style={{backgroundColor: 'aliceblue'}}>

@@ -1,6 +1,7 @@
 import { Box, CircularProgress, Grid } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
+import SearchBar from '../SearchBar/SearchBar';
 import './Home.css'
 const Home = () => {
     const [products,setProducts]= useState([]);
@@ -13,6 +14,7 @@ const Home = () => {
     },[])
     return (
         <Box width="75%" style={{margin: '50px auto'}}>
+            <SearchBar ></SearchBar>
             <Grid
                 alignItems="center"
                 spacing="3"

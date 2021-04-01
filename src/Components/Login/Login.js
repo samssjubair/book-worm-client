@@ -103,7 +103,7 @@ const Login = () => {
         });
     }
     
-    return (
+    return  (
         <div className="form-style">
             {
                 newUser? <h1>Register</h1>: <h1>Login</h1>

@@ -1,4 +1,4 @@
-ul {
+.nav {
     list-style-type: none;
     margin: 0  auto 10px;
     padding: 0 10px;
@@ -9,10 +9,8 @@ ul {
     background-color: white;
 
   }
-  .ms-auto{
-      margin-left: auto;
-  }
-  ul li{
+  
+  .nav li{
       margin: 0 10px;
       
   }

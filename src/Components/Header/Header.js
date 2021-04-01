@@ -1,25 +1,35 @@
 import { Button } from '@material-ui/core';
 import React, { useContext } from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect, useHistory, useLocation } from 'react-router-dom';
 import { UserContext } from '../../App';
 import './Header.css';
 
 
 const Header = () => {
+    const history= useHistory();
+    const location = useLocation();
+    const handleAdminBtn=()=>{
+        history.push('/admin');
+    }
     const linkStyle={
         textDecoration: 'none',
         color: 'black'
    }
    const [loggedInUser,setLoggedInUser]= useContext(UserContext);
-    return (
+
+  if(location.pathname.startsWith('/admin')){
+      return null;
+  }
+    return  (
         <div>
              
-            <ul>
+            <ul className="nav">
                 <h2>Book-worm</h2>
-                <li  className="ms-auto"> <Link style={linkStyle} to="/home">Home</Link> </li>
+                <li  style={{marginLeft: 'auto'}}> <Link style={linkStyle} to="/home">Home</Link> </li>
                 <li> <Link style={linkStyle}  to="/orders">Orders</Link></li>
-                <li> <Link style={linkStyle}  to="/admin">Admin</Link></li>
+                <li> <Link  style={linkStyle}  to="/admin">Admin</Link></li>
+                {/* <li>  <button onClick={handleAdminBtn}>Admin</button></li> */}
                 <li> <Link style={linkStyle} to="/deal">Deal</Link></li>
                 
                 {

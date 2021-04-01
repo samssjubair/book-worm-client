@@ -4,11 +4,14 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useHistory
 } from "react-router-dom";
 import './App.css';
 import AddProduct from "./Components/AddProduct/AddProduct";
+import Admin from "./Components/Admin/Admin";
 import CheckOut from "./Components/CheckOut/CheckOut";
+import Deal from "./Components/Deal/Deal";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
@@ -23,8 +26,9 @@ function App() {
   return (
     <div >
     <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
+      
       <Router>
-        <Header></Header>
+      <Header></Header>
         
           <Switch>
             <Route exact path="/">
@@ -39,9 +43,15 @@ function App() {
             <PrivateRoute path="/orders">
               <Orders></Orders>
             </PrivateRoute>
-            <PrivateRoute path="/admin/addProduct">
-              <AddProduct></AddProduct>
+            <PrivateRoute path='/admin'>
+              <Admin ></Admin>
             </PrivateRoute>
+            <Route path="/deal">
+              <Deal></Deal>
+            </Route>
+            {/* <PrivateRoute path="/admin/addProduct">
+              <AddProduct></AddProduct>
+            </PrivateRoute> */}
             <Route path="/login">
               <Login></Login>
             </Route>
